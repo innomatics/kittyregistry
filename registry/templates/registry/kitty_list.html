@@ -1,0 +1,15 @@
+{#  kitty.kitty_size.pixel_size #}
+
+{% block title %}<h1>All my lovely Kitties</h1>{% endblock %}
+
+{% block content %}
+    {% if kitty_list.count == 0 %}
+    <p>Awww you don't have any Kitties :(</p>
+    {%  endif %}
+{% for kitty in kitty_list %}
+    <a href="{{ kitty.url }}">
+      <img src="{{ kitty.image_src }}" height={{ kitty.kitty_size.pixel_size }} width={{ kitty.kitty_size.pixel_size }}>
+      </img>
+    </a>
+{% endfor %}
+{% endblock %}
